@@ -4,7 +4,7 @@ leveneTest(dn ~ group, dados_classe, center=mean)
 leveneTest(dc ~ group, dados_classe, center=mean)
 anova_dn <- aov(dn ~ group, dados_classe)
 summary(anova_dn)
-             
+
 # Uso do TukeyHSD
 PostHocTest(anova_dn, method = "hsd")
 
@@ -15,7 +15,7 @@ welch_dc
 
 gh_dc <- rstatix::games_howell_test(dados_classe, dc ~ group)
 gh_dc
- 
+
 kruskal.test(dc ~ group, data = dados_classe)
 
 dunn_test(dc ~ group, data = dados_classe, p.adjust.method = "bonferroni")
